@@ -7,6 +7,7 @@ import { ThemedView } from "@/components/ThemedView";
 import { Input, InputField } from "@gluestack-ui/themed";
 import InputComponent from "@/components/uikit/Input";
 import ButtonComponent from "@/components/uikit/Button";
+import { CCCardComponent } from "@/components/uikit/Card";
 
 export default function HomeScreen() {
   return (
@@ -53,6 +54,12 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+      <CCCardComponent
+        ccNumber="•••• •••• •••• 9989"
+        nameOnCard="Ty Lee"
+        expires="12/25"
+        cardType="mastercard"
+      />
     </ParallaxScrollView>
   );
 }
