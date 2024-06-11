@@ -1,67 +1,30 @@
-import { Image, StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { Input, InputField } from "@gluestack-ui/themed";
-import InputComponent from "@/components/uikit/Input";
+import { Center, Heading, Text, VStack } from "@gluestack-ui/themed";
 import ButtonComponent from "@/components/uikit/Button";
-import { CCCardComponent } from "@/components/uikit/Card";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
-        />
-      }
+    <Center
+      height="$full"
     >
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          to see changes. Press{" "}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: "cmd + d", android: "cmd + m" })}
-          </ThemedText>{" "}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{" "}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{" "}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{" "}
-          directory. This will move the current{" "}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{" "}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-      <CCCardComponent
-        ccNumber="•••• •••• •••• 9989"
-        nameOnCard="Ty Lee"
-        expires="12/25"
-        cardType="mastercard"
-      />
-    </ParallaxScrollView>
+      <VStack py="$10" alignItems="center">
+        <Heading size="5xl">💳</Heading>
+        <Text color="#000000">No Cards Found</Text>
+        <Text color="#000000">We recommend adding a card for easy payment</Text>
+        <ButtonComponent variant="link" text="Add New Card" />
+      </VStack>
+    </Center>
   );
+}
+
+{
+  /* <CCCardComponent
+  ccNumber="•••• •••• •••• 9989"
+  nameOnCard="Ty Lee"
+  expires="12/25"
+  cardType="mastercard"
+/>; */
 }
 
 const styles = StyleSheet.create({

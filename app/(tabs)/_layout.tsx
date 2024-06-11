@@ -1,17 +1,23 @@
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import React from "react";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Colors } from "@/constants/Colors";
+import { Entypo } from "@expo/vector-icons";
+import { Pressable } from "@gluestack-ui/themed";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Slot
+    <Stack
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        headerShown: false,
+        title: "Cards",
+        headerShown: true,
+        headerRight: () => (
+          <Pressable>
+            <Entypo name="plus" size={24} color="black" />
+          </Pressable>
+        ),
       }}
     />
   );
