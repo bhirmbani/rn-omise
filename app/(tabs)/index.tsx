@@ -6,6 +6,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Input, InputField } from "@gluestack-ui/themed";
 import InputComponent from "@/components/uikit/Input";
+import ButtonComponent from "@/components/uikit/Button";
 
 export default function HomeScreen() {
   return (

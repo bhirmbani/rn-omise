@@ -9,7 +9,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { GluestackUIProvider} from "@gluestack-ui/themed"
-import { config } from "@gluestack-ui/config" // Optional if you want to use default theme
+import { config } from "@/config/gluestack-ui.config";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 
