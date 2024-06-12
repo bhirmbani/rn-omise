@@ -13,10 +13,12 @@ import { StyleSheet } from "react-native";
 interface InputComponent {
   placeholder?: string;
   IconChildren?: React.JSX.Element;
+  onChangeText?: (text: string) => void;
+  value?: string;
 }
 
 export default function InputComponent(props: InputComponent) {
-  const { placeholder, IconChildren } = props;
+  const { placeholder, IconChildren, onChangeText, value } = props;
   return {
     WithIcon: (
       <Input>
@@ -26,7 +28,11 @@ export default function InputComponent(props: InputComponent) {
     ),
     WithCCNumber: (
       <Input>
-        <InputField placeholder="0000 0000 0000 0000" />
+        <InputField
+          onChangeText={onChangeText}
+          value={value}
+          placeholder="0000 0000 0000 0000"
+        />
         <InputSlot pl="$3">
           <Image width={25} height={15} alt="visa" source={images.visa} />
         </InputSlot>

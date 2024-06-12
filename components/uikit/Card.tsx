@@ -35,7 +35,7 @@ export function CCCardComponent(props: CCCardComponent) {
         width={66}
         height={40}
         alt="mastercard"
-        source={images[cardType as keyof typeof images]}
+        source={images[cardType as keyof typeof images] ?? images["visa"]}
       />
       <HStack justifyContent="space-between" maxWidth="$5/6">
         <VStack>

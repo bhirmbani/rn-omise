@@ -7,6 +7,7 @@ export interface CardI {
   expiryDate: string;
   cvv: string;
   nameOnCard: string;
+  type?: string;
 }
 
 const storage = createJSONStorage<CardI[] | []>(() => AsyncStorage)
