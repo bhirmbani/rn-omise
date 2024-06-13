@@ -36,6 +36,6 @@ Please add test card provided by omise on their documentation [here.](https://do
 Example card number
 
 - Success charge: 4242 4242 4242 4242
-- Failed charge: 4111 1111 1111 1111
+- Failed charge: 4111 1111 1114 0011
 
 You can add anything for name and cvv field. But, make sure to add expiry date that not older than today.

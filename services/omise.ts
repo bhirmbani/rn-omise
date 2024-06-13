@@ -1,5 +1,4 @@
-// @ts-ignore
-import * as base64 from "base-64";
+import { Buffer } from "buffer";
 import { ChargeCard, CreateToken } from "@/hooks/usePayment";
 
 const vaultEndpoint = "https://vault.omise.co/";
@@ -12,13 +11,15 @@ export class ReactNativeOmise {
 
   createToken(data: CreateToken): Promise<any> {
     const tokenEndpoint = vaultEndpoint + "tokens";
+    const auth = Buffer.from("pkey_test_5wvisbxphp1zapg8ie6").toString(
+      "base64"
+    );
     return new Promise((resolve, reject) => {
       return fetch(tokenEndpoint, {
         method: "POST",
         cache: "no-cache",
         headers: {
-          Authorization:
-            "Basic " + base64.encode("pkey_test_5wvisbxphp1zapg8ie6" + ":"),
+          Authorization: "Basic " + auth + ":",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
@@ -37,13 +38,15 @@ export class ReactNativeOmise {
 
   chargeCard(data: ChargeCard): Promise<any> {
     const chargeEndpoint = apiEndpoint + "charges";
+    const auth = Buffer.from("skey_test_5wvisdjjoqmfof5npzw").toString(
+      "base64"
+    );
     return new Promise((resolve, reject) => {
       return fetch(chargeEndpoint, {
         method: "POST",
         cache: "no-cache",
         headers: {
-          Authorization:
-            "Basic " + base64.encode("skey_test_5wvisdjjoqmfof5npzw" + ":"),
+          Authorization: "Basic " + auth + ":",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
