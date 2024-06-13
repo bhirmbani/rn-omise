@@ -90,7 +90,11 @@ export default function usePayment() {
         card: token,
       };
       const charge = await reactNativeOmise.chargeCard(payload);
-      Alert.alert("Success", JSON.stringify(charge));
+      if (charge.failure_code === null) {
+        Alert.alert("Success", JSON.stringify(charge));
+      } else {
+        Alert.alert(charge.failure_code, charge.failure_message);
+      }
       return charge;
     } catch (error) {
       Alert.alert("Error", (error as unknown as Error).message);

@@ -1,5 +1,6 @@
 import { CardI, cardAtom } from "@/store";
 import { formatCreditCard, formatDate, getCreditCardType } from "cleave-zen";
+import { router } from "expo-router";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 import { useForm, useWatch } from "react-hook-form";
@@ -87,6 +88,7 @@ export default function useCards() {
         { ...newCard, type: getCreditCardType(newCard.ccNumber) },
       ];
     });
+    router.back();
   };
 
   const deleteCard = (index: number) => {
