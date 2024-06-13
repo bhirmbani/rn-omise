@@ -21,6 +21,7 @@
     "@gluestack-ui/themed": "^1.1.28",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/native": "^6.0.2",
+    "axios": "^1.7.2",
     "cleave-zen": "^0.0.17",
     "expo": "~51.0.12",
     "expo-constants": "~16.0.2",
